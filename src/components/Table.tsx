@@ -40,25 +40,19 @@ const Table: React.FunctionComponent<TableProps> = ({ loading, countries }) => {
                             thousandSeparated: true,
                         })}
                     </td>
-                    {country.currencyData.map(
-                        (currencies: CURRENCY_DATA, i: number) => {
-                            if (currencies.currencyAmount) {
-                                return (
-                                    <React.Fragment
-                                        key={`country-currency${i}`}
-                                    >
-                                        <td>{currencies.currency}</td>
-                                        <td>
-                                            <span className="symbol">
-                                                {currencies.symbol}{" "}
-                                            </span>
-                                            {currencies.currencyAmount}
-                                        </td>
-                                    </React.Fragment>
-                                );
-                            }
-                        }
-                    )}
+                    {country.currencyData
+                        .filter((currencies) => currencies.currencyAmount)
+                        .map((currencies: CURRENCY_DATA, index: number) => (
+                            <React.Fragment key={`country-currency${index}`}>
+                                <td>{currencies.currency}</td>
+                                <td>
+                                    <span className="symbol">
+                                        {currencies.symbol}{" "}
+                                    </span>
+                                    {currencies.currencyAmount}
+                                </td>
+                            </React.Fragment>
+                        ))}
                     <td>
                         <img
                             src={country.flag}
