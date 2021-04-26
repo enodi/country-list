@@ -1,0 +1,15 @@
+.header {
+    background-color: rgb(12, 23, 104);
+    width: 100%;
+    padding: 10px;
+
+    &__content {
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+}

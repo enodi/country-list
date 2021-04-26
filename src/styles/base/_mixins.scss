@@ -1,0 +1,7 @@
+$layout-breakpoint: 901px;
+
+@mixin mobile {
+    @media (max-width: $layout-breakpoint + 1px) {
+        @content;
+    }
+}

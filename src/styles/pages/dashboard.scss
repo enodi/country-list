@@ -1,0 +1,87 @@
+@import "../base/mixins";
+
+.dashboard {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    padding: 0 10px;
+
+    &__title {
+        color: #1e1147;
+        line-height: 26px;
+        padding: 2rem 0;
+        font-weight: 400;
+        font-size: 26px;
+    }
+
+    &__button-section {
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        div:nth-of-type(even) {
+            @include mobile {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 4rem;
+
+        thead {
+            tr {
+                text-align: left;
+                background-color: rgba(12, 23, 104, 0.8);
+                color: #fff;
+
+                th {
+                    padding: 12px;
+                    width: 200px;
+                }
+            }
+        }
+
+        tbody {
+            tr:nth-child(even) {
+                background-color: rgb(253, 238, 242);
+            }
+
+            td {
+                padding: 12px;
+            }
+        }
+    }
+
+    &--img-dimension {
+        width: 40px;
+        height: 25px;
+    }
+}
+
+.loader__wrapper {
+    position: absolute;
+    left: 50%;
+    margin-top: 50px;
+}
+
+.loading__anim {
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    border: 5px solid rgba(189, 189, 189, 0.25);
+    border-left-color: rgba(12, 23, 104, 0.7);
+    border-top-color: rgba(12, 23, 104, 0.7);
+    border-radius: 50%;
+    animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
