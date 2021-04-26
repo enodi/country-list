@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Component should render Table component correctly 1`] = `
+<table
+  className="dashboard__table"
+>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Capital
+      </th>
+      <th>
+        Population
+      </th>
+      <th>
+        Currency Code
+      </th>
+      <th>
+        Local Currency
+      </th>
+      <th>
+        Flag
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      key="country-0"
+    >
+      <td>
+        Nigeria
+      </td>
+      <td>
+        Abuja
+      </td>
+      <td>
+        186,988,000
+      </td>
+      <td>
+        NGN
+      </td>
+      <td>
+        45.424481
+      </td>
+      <td>
+        <img
+          alt="country flag"
+          className="dashboard--img-dimension"
+          src="https://restcountries.eu/data/nga.svg"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
