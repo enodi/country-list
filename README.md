@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+### Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-   Navigate to a directory within your terminal
+-   Clone this repo to your directory
+    -   Using HTTP; `$ git clone https://github.com/enodi/country-list.git`
+-   Navigate to the root directory e.g `$ cd country-list`
+-   Run `npm install` to install project dependencies
+-   Start the application using: `npm start`
+-   Navigate to app in [browser](http://localhost:3000)
+-   Enjoy!
 
-## Available Scripts
+### Discussion
 
-In the project directory, you can run:
+I used the following technologies: HTML, CSS, React, Jest, and Enzyme.
+I used create-react-app to generate the scaffolding for this app.
 
-### `npm start`
+#### Build an application that allow users search for countries and display country name, capital, population and currency. Users should also be able to enter an amount in SEK and get the amount converted into local currency for each country.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I used a table component to display country information. The table contains 6 heading: Name, Capital, Population, Currencu Code, Local Currency Equivalent and Flag.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I also used an input field to search for countries and also input an amount in SEK. Users input an amount in SEK and see the equivalent for each country's local currency on the table.
 
-### `npm test`
+### TEST
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   To run test, navigate to the root directory
+    -   Run `npm test`
 
-### `npm run build`
+### What I would have done if given more time
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   Add pagination to the table: This is important as we don't want users scrolling to the end of the page to see all the list of countries displayed.
+-   Move api key to `.env` file and gitignore `.env`: API keys are private and shouldn't be exposed. I didn't store the API key in a `.env` file to ensure whoever is testing doesn't run into errors.
+-   I would have written more tests: I was able to setup the test environment using jest and enzyme and also tested all components but I would have loved to test more functions.
