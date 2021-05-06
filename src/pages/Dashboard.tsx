@@ -26,8 +26,10 @@ const Dashboard = () => {
         setCountry(event.target.value);
     };
 
-    const displayCountryDetails = async () => {
+    const displayCountryDetails = async (event: React.SyntheticEvent) => {
+        event.preventDefault();
         setLoading(true);
+
         let countriesInfo: any[] = [];
         const response: COUNTRY[] = await searchCountryByName(country);
 
@@ -49,8 +51,10 @@ const Dashboard = () => {
         setSwedishAmount(event.target.value);
     };
 
-    const updateLocalCurrency = async () => {
+    const updateLocalCurrency = async (event: React.SyntheticEvent) => {
+        event.preventDefault();
         setLoading(true);
+
         const countriesInfo = await Promise.all(
             countries.map(async (country: COUNTRY_DETAIL) =>
                 updateCountryDetails(country)
@@ -113,26 +117,23 @@ const Dashboard = () => {
         <main className="dashboard">
             <h2 className="dashboard__title">Search for any country</h2>
             <section className="dashboard__button-section">
-                <div>
+                <form onSubmit={displayCountryDetails}>
                     <Input
                         type="text"
                         placeholder="Search for a country"
                         handleOnChange={handleCountryChange}
                     />
-                    <Button
-                        handleClick={displayCountryDetails}
-                        title="Search"
-                    />
-                </div>
+                    <Button title="Search" />
+                </form>
 
-                <div>
+                <form onSubmit={updateLocalCurrency}>
                     <Input
                         type="number"
                         placeholder="Enter an amount in SEK"
                         handleOnChange={handleCurrencyChange}
                     />
-                    <Button handleClick={updateLocalCurrency} title="Convert" />
-                </div>
+                    <Button title="Convert" />
+                </form>
             </section>
             <Table loading={loading} countries={countries} />
         </main>

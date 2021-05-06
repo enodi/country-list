@@ -2,7 +2,7 @@ import React from "react";
 
 type ButtonProps = {
     title: string;
-    handleClick: () => void;
+    handleClick?: () => void;
 };
 
 const Button: React.FunctionComponent<ButtonProps> = ({
